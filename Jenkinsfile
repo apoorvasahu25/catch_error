@@ -11,8 +11,10 @@ pipeline {
         stage('Example build') {
             
             steps {
+                catchError{
                 echo 'Hello,this is build step'
                 sh 'exit 1'
+                }
             }
         }
         stage('Example deploy') {
