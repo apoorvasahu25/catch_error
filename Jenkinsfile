@@ -11,7 +11,7 @@ pipeline {
         stage('Example test') {
             
             steps {
-                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE'){
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
                 echo 'Hello,this is test step'
                 sh 'exit 1'
                 }
